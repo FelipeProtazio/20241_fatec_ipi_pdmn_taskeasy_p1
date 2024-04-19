@@ -1,16 +1,18 @@
+
 import React, { useState } from 'react';
 import LembreteEntrada from './LembreteEntrada';
 import LembreteLista from './LembreteLista';
 
 function App() {
-  const [lembretes, setLembretes] = useState([
-    'Preparar aula de programação',
-    'Fazer feira',
-    'Preparar marmita'
-  ]); 
+  const [lembretes, setLembretes] = useState([]);
 
   function adicionarLembrete(lembrete) {
-    setLembretes([...lembretes, lembrete]);
+    const temValor = lembrete.trim() !== '';
+    
+    if (temValor) {
+      // Faz o spread em lembretes para manter todos os lembretes, adicionando o novo lembrete ao final
+      setLembretes([...lembretes, lembrete]);
+    }
   };
 
   return (
