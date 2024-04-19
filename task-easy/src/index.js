@@ -1,15 +1,9 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import App from './components/App';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-const App = () => {
-  return (
-    <div className='container border rounded mt-2'>
-      Hello, Lembretes!
-    </div>
-  );
-}   
-
 ReactDOM.render(
-<App />,
- document.getElementById('root'));
+  <App />,
+  document.querySelector('#root')
+);
